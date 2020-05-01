@@ -46,17 +46,17 @@
 			color: userOptions.color, 
 			addSelectionOptions: false, // creates search console
 			use: "HTML5",   // JAVA HTML5 WEBGL are all options
-					j2sPath: "https://chemapps.stolaf.edu/jmol/jsmol/j2s", // this needs to point to where the j2s directory is.
-					jarPath: "https://chemapps.stolaf.edu/jmol/jsmol/java",// this needs to point to where the java directory is.
+			j2sPath: "https://chemapps.stolaf.edu/jmol/jsmol/j2s", // point to where the j2s directory is
+			jarPath: "https://chemapps.stolaf.edu/jmol/jsmol/java",// point to where the java directory is
 			jarFile: "JmolAppletSigned.jar",
 			isSigned: true,
-					script: "console;set zoomlarge false;set antialiasDisplay;load " + molFile + ";center",
+			script: "console;set zoomlarge false;set antialiasDisplay;load " + molFile + ";center",
 			//	serverURL: "http://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
 			serverURL: "https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
 			readyFunction: jmol_isReady,
 			disableJ2SLoadMonitor: true,
-	  	disableInitialConsole: true,
-		  allowJavaScript: true,
+	  		disableInitialConsole: true,
+			allowJavaScript: true,
 			//defaultModel: "$dopamine",
 			//console: "none", // default will be jmolApplet0_infodiv, but you can designate another div here or "none"
 		}
