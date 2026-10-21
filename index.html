@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-		body {
-			background-color: #CCCCCC;
-		}
-	</style>
 	<meta charset="utf-8">
 	<title>JSmol Console</title>
+	<style> body { background-color: #CCCCCC; } </style>
 	<script type="text/javascript" src="https://chemapps.stolaf.edu/jmol/jsmol/JSmol.min.js"></script>
-
 	<script type="text/javascript">
-		
 		userOptions = {
 			width:  $(window).width() * 0.98,
 			height: $(window).height() * 0.98,
@@ -26,10 +20,10 @@
 		molFile = "$caffeine"
 		var endpoint = 'https://chemapps.stolaf.edu/jmol';
 
-		Jmol._isAsync = false;
+		// Jmol._isAsync = false;
 		var jmolApplet0; // set up in HTML table, below
 		var s = document.location.search;
-		Jmol._debugCode = (s.indexOf("debugcode") >= 0);
+		// Jmol._debugCode = (s.indexOf("debugcode") >= 0);
 		
 		jmol_isReady = function(applet) {
 			document.title = (applet._id + " - Jmol " + Jmol.___JmolVersion)
@@ -39,18 +33,17 @@
 		var Info = {
 			width: userOptions.width  * 2/3,
 			height:userOptions.height * 1,
-			debug: false,
 			color: userOptions.color, 
-			addSelectionOptions: false, // creates search console
+			// addSelectionOptions: false, // creates search console
 			use: "HTML5",   // JAVA HTML5 WEBGL are all options
 			j2sPath: endpoint + "/jsmol/j2s", // point to where the j2s directory is
-			isSigned: true,
-			script: "console;set zoomlarge false;set antialiasDisplay;load " + molFile + ";centerat average;cd https://garcias.github.io/jmol-console/",
+			// isSigned: true,
 			serverURL: endpoint + "/jsmol/php/jsmol.php",
-			readyFunction: jmol_isReady,
-			disableJ2SLoadMonitor: true,
-	  		disableInitialConsole: true,
-			allowJavaScript: true,
+			script: "console;set zoomlarge false;set antialiasDisplay;load " + molFile + ";centerat average;cd https://garcias.github.io/jmol-console/",
+			// readyFunction: jmol_isReady,
+			// disableJ2SLoadMonitor: true,
+	  		// disableInitialConsole: true,
+			// allowJavaScript: true,
 			//defaultModel: "$dopamine",
 			//console: "none", // default will be jmolApplet0_infodiv, but you can designate another div here or "none"
 		}
