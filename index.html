@@ -25,13 +25,11 @@
 		// path to file you want to load
 		// molFile = "./molvis-tools/jsmol/data/caffeine.mol"
 		molFile = "$caffeine"
+		var endpoint = 'https://jmol.sourceforge.net/jmol'
 
 		Jmol._isAsync = false;
-		
 		var jmolApplet0; // set up in HTML table, below
-		
 		var s = document.location.search;
-		
 		Jmol._debugCode = (s.indexOf("debugcode") >= 0);
 		
 		jmol_isReady = function(applet) {
@@ -46,13 +44,12 @@
 			color: userOptions.color, 
 			addSelectionOptions: false, // creates search console
 			use: "HTML5",   // JAVA HTML5 WEBGL are all options
-			j2sPath: "https://chemapps.stolaf.edu/jmol/jsmol/j2s", // point to where the j2s directory is
-			jarPath: "https://chemapps.stolaf.edu/jmol/jsmol/java",// point to where the java directory is
+			j2sPath: endpoint + "/jsmol/j2s", // point to where the j2s directory is
+			jarPath: endpoint + "/jsmol/java",// point to where the java directory is
 			jarFile: "JmolAppletSigned.jar",
 			isSigned: true,
 			script: "console;set zoomlarge false;set antialiasDisplay;load " + molFile + ";centerat average;cd https://garcias.github.io/jmol-console/",
-			//	serverURL: "http://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
-			serverURL: "https://chemapps.stolaf.edu/jmol/jsmol/php/jsmol.php",
+			serverURL: endpoint + "/php/jsmol.php",
 			readyFunction: jmol_isReady,
 			disableJ2SLoadMonitor: true,
 	  		disableInitialConsole: true,
