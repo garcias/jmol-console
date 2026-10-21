@@ -44,8 +44,8 @@
 			color: userOptions.color, 
 			addSelectionOptions: false, // creates search console
 			use: "HTML5",   // JAVA HTML5 WEBGL are all options
-			j2sPath: endpoint + "/jsmol/j2s", // point to where the j2s directory is
-			jarPath: endpoint + "/jsmol/java",// point to where the java directory is
+			j2sPath: endpoint + "/j2s", // point to where the j2s directory is
+			jarPath: endpoint + "/java",// point to where the java directory is
 			jarFile: "JmolAppletSigned.jar",
 			isSigned: true,
 			script: "console;set zoomlarge false;set antialiasDisplay;load " + molFile + ";centerat average;cd https://garcias.github.io/jmol-console/",
