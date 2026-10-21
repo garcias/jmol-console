@@ -8,7 +8,7 @@
 	</style>
 	<meta charset="utf-8">
 	<title>JSmol Console</title>
-	<script type="text/javascript" src="https://jmol.sourceforge.net/jmol/JSmol.min.js"></script>
+	<script type="text/javascript" src="https://chemapps.stolaf.edu/jmol/jsmol/JSmol.min.js"></script>
 
 	<script type="text/javascript">
 		
@@ -23,9 +23,8 @@
 		}
 		
 		// path to file you want to load
-		// molFile = "./molvis-tools/jsmol/data/caffeine.mol"
 		molFile = "$caffeine"
-		var endpoint = 'https://jmol.sourceforge.net/jmol'
+		var endpoint = 'https://chemapps.stolaf.edu/jmol/jsmol/JSmol.min.js';
 
 		Jmol._isAsync = false;
 		var jmolApplet0; // set up in HTML table, below
@@ -44,12 +43,10 @@
 			color: userOptions.color, 
 			addSelectionOptions: false, // creates search console
 			use: "HTML5",   // JAVA HTML5 WEBGL are all options
-			j2sPath: endpoint + "/j2s", // point to where the j2s directory is
-			jarPath: endpoint + "/java",// point to where the java directory is
-			jarFile: "JmolAppletSigned.jar",
+			j2sPath: endpoint + "/jsmol/j2s", // point to where the j2s directory is
 			isSigned: true,
 			script: "console;set zoomlarge false;set antialiasDisplay;load " + molFile + ";centerat average;cd https://garcias.github.io/jmol-console/",
-			serverURL: endpoint + "/php/jsmol.php",
+			serverURL: endpoint + "/jsmol/php/jsmol.php",
 			readyFunction: jmol_isReady,
 			disableJ2SLoadMonitor: true,
 	  		disableInitialConsole: true,
